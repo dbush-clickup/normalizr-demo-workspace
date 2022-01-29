@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "root": "apps/normalizr-demo",
+  "sourceRoot": "apps/normalizr-demo/src",
+  "prefix": "normalizr-demo-workspace",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/normalizr-demo",
+        "index": "apps/normalizr-demo/src/index.html",
+        "main": "apps/normalizr-demo/src/main.ts",
+        "polyfills": "apps/normalizr-demo/src/polyfills.ts",
+        "tsConfig": "apps/normalizr-demo/tsconfig.app.json",
+        "assets": [
+          "apps/normalizr-demo/src/favicon.ico",
+          "apps/normalizr-demo/src/assets"
+        ],
+        "styles": ["apps/normalizr-demo/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/normalizr-demo/src/environments/environment.ts",
+              "with": "apps/normalizr-demo/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "normalizr-demo:build:production"
+        },
+        "development": {
+          "browserTarget": "normalizr-demo:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "normalizr-demo:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/normalizr-demo/src/**/*.ts",
+          "apps/normalizr-demo/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/normalizr-demo"],
+      "options": {
+        "jestConfig": "apps/normalizr-demo/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
