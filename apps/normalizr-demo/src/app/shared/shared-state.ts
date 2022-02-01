@@ -1,6 +1,5 @@
-import { Dictionary } from "@ngrx/entity";
-import { Contact } from "./contacts/contact";
+import { ContactEntity } from "./entities";
 
 export interface SharedState {
-  contacts: Dictionary<Contact>;
+  contacts: ContactEntity;
 }

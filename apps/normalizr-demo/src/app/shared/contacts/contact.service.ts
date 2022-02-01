@@ -7,7 +7,7 @@ import { Dictionary } from '@ngrx/entity';
 
 const fakeData: Array<Contact> = [
  {
-   id: 1,
+   id: 3,
    firstName: 'Dave',
    lastName: 'Bush',
  },

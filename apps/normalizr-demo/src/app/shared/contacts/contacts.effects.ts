@@ -5,6 +5,7 @@ import { SharedState } from '../shared-state';
 import { Store } from '@ngrx/store';
 import { ContactsService } from './contact.service';
 import { map, switchMap } from 'rxjs';
+import { entityAdapter } from '../entity-adapter.function';
 
 
 @Injectable()
@@ -16,7 +17,7 @@ export class ContactsEffects {
         this.service.list()
       ),
       map((d) => {
-        return ContactsActions.loadContactsResult({contacts: {...d.entities['contacts']}})
+        return ContactsActions.loadContactsResult(entityAdapter(d.entities['contacts'] ?? {}, d.result))
       })
     );
   });

@@ -1,4 +1,4 @@
-import { Dictionary } from '@ngrx/entity';
+import { EntityState } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
 import { Contact } from './contact';
 
@@ -8,7 +8,7 @@ export const loadContacts = createAction(
 
 export const loadContactsResult = createAction(
   '[Contacts] Load Contacts Result',
-  props<{contacts: Dictionary<Contact>}>()
+  props<EntityState<Contact>>()
 );
 
 
