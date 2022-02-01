@@ -1,7 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "normalizr-demo": "apps/normalizr-demo",
-    "normalizr-demo-e2e": "apps/normalizr-demo-e2e"
+    "normalizr-demo": "apps/normalizr-demo"
   }
 }
