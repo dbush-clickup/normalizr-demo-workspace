@@ -10,8 +10,3 @@ export const loadContactsResult = createAction(
   '[Contacts] Load Contacts Result',
   props<EntityState<Contact>>()
 );
-
-
-
-
-

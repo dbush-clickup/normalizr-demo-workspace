@@ -1,7 +1,7 @@
 import { EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
 import { Contact } from './contact';
-import * as ContactsActions from './contacts.actions';
+import { loadContactsResult } from './contacts.actions';
 
 export const contactsFeatureKey = 'contacts';
 
@@ -10,7 +10,7 @@ export const initialState: EntityState<Contact> = { ids: [], entities: {} };
 export const contactsReducer = createReducer(
   initialState,
 
-  on(ContactsActions.loadContactsResult,
+  on(loadContactsResult,
     (_, contacts) =>
         contacts),
 

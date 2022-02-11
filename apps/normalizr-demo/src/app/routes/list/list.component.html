@@ -1,3 +1,5 @@
 <div *ngFor="let contact of (allContacts | async)">
   <div>{{contact.firstName}}</div>
+  <div *ngFor="let phone of contact.phoneNumbers">
+    <div>{{phone.phoneNumber}}</div>
 </div>

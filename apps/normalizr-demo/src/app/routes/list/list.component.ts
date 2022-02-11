@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Contact } from '../../shared/contacts/contact';
-import { selectAllContacts } from '../../shared/contacts/contact.selectors';
+import { selectContactsWithPhones } from '../../shared/contacts/contact.selectors';
 import { loadContacts } from '../../shared/contacts/contacts.actions';
 import { SharedState } from '../../shared/shared-state';
 
@@ -13,10 +13,10 @@ import { SharedState } from '../../shared/shared-state';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  allContacts: Observable<Array<Contact>>;
+  allContacts: Observable<Contact[]>;
 
   constructor(private store: Store<SharedState>) {
-    this.allContacts = this.store.select(selectAllContacts);
+    this.allContacts = this.store.select(selectContactsWithPhones);
   }
 
   ngOnInit() {
