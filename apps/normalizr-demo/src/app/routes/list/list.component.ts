@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Contact } from '../../shared/contacts/contact';
-import { selectContactsWithPhones } from '../../shared/contacts/contact.selectors';
+import { selectContactsWithPhones } from '../../shared/contacts/contacts.selectors';
 import { loadContacts } from '../../shared/contacts/contacts.actions';
 import { SharedState } from '../../shared/shared-state';
 

@@ -9,13 +9,13 @@ const fakeData: Array<Contact> = [
   {
     id: 3,
     firstName: 'Dave',
+    lastName: 'Bush',
     phoneNumbers: [
       {
         id: 1,
         phoneNumber: '123-456-7897',
       },
     ],
-    lastName: 'Bush',
   },
   {
     id: 2,

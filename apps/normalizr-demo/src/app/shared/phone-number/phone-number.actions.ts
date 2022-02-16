@@ -9,7 +9,9 @@ export const loadPhoneNumberResult = createAction(
   props<EntityState<PhoneNumber>>()
 );
 
-
+export const addPhoneNumber = createAction(
+  '[PhoneNumbers] Add PhoneNumber',
+  props<PhoneNumber>());
 
 
 
